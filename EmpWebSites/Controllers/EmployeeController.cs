@@ -14,6 +14,7 @@ namespace EmpWebSites.Controllers
         {
             return View();
         }
+        //hello atul
         //master dta again
         public JsonResult Get_data()
         {
@@ -103,6 +104,7 @@ namespace EmpWebSites.Controllers
 
         }
 
+//Hiii atul
         public JsonResult update(String id, Employee objEmployee)
         {
             string res = string.Empty;
@@ -207,11 +209,6 @@ namespace EmpWebSites.Controllers
                 }
             }
             return flag = "true";
-        }
-
-        public string StringUppercase()
-        {
-            return null; 
         }
     }
 }
