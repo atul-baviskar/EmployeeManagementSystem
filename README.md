@@ -1,2 +1,2 @@
 # EmployeeManagementSystem
-For Manage Employee Information.
+For Manage Employee Information and track employee detail

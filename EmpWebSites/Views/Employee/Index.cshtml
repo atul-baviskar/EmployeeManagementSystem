@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Employee";
+}
+<head>
+    <title>Modal</title>
+    <link href="~/Content/toaster.min.css" rel="stylesheet" />
+    <script src="~/Scripts/toaster.min.js"></script>
+    @*<script src="~/Scripts/Application_js/DataService.js"></script>
+    <script src="~/Scripts/Application_js/Demo.js"></script>*@
+</head>
+<body class="container" ng-app="Employeeapp" ng-controller="Employeecontroller">
+    <toaster-container toaster-options="{'time-out':5000}"></toaster-container>
+    <div ng-init="GetAllData()">
+        <input type="button" ng-click="open()" value="Add Record" class="btn btn-info btn-lg right" />
+        <input type="text" ng-model="searchText" class="input-lg right"/>
+        <table border="1" id="tablee" class="table table-bordered">
+            <tr>
+                <th>Ename</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>Mobile</th>
+                <th>UserName</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr ng-repeat="x in records |filter:searchText">
+                <td>{{x.Ename}}</td>
+                <td>{{x.Email}}</td>
+                <td>{{x.Salary}}</td>
+                <td>{{x.mobile}}</td>
+                <td>{{x.UserName}}</td>
+                <td>{{x.Password}}</td>
+                <td><button type="button" class="btn btn-info"><a ng-click="edittemplate(x.Eid)">Update</a></button></td>
+                <td><button type="button" class="btn btn-danger"><a ng-click="deleteData(x.Eid)">Delete</a></button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
