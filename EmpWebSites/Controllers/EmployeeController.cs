@@ -103,6 +103,7 @@ namespace EmpWebSites.Controllers
 
         }
 
+//Hiii atul
         public JsonResult update(String id, Employee objEmployee)
         {
             string res = string.Empty;
@@ -207,11 +208,6 @@ namespace EmpWebSites.Controllers
                 }
             }
             return flag = "true";
-        }
-
-        public string StringUppercase()
-        {
-            return null; 
         }
     }
 }
