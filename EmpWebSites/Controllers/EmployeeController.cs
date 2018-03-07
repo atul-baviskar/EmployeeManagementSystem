@@ -14,7 +14,6 @@ namespace EmpWebSites.Controllers
         {
             return View();
         }
-        //hello atul
         public JsonResult Get_data()
         {
             EmployeeDataHandler objEmployeeDataHandler = new EmployeeDataHandler();
@@ -35,9 +34,7 @@ namespace EmpWebSites.Controllers
                     });
             }
             return Json(Employeelist, JsonRequestBehavior.AllowGet);
-
         }
-
         public JsonResult Add_record(Employee objEmployee)
         {
             string res = string.Empty;
@@ -79,7 +76,6 @@ namespace EmpWebSites.Controllers
 
             return Json(Employeelist, JsonRequestBehavior.AllowGet);
         }
-
         public JsonResult Get_databyid(String id)
         {
             EmployeeDataHandler objEmployeeDataHandler = new EmployeeDataHandler();
@@ -100,10 +96,7 @@ namespace EmpWebSites.Controllers
                     });
             }
             return Json(Employeelist, JsonRequestBehavior.AllowGet);
-
         }
-
-//Hiii atul
         public JsonResult update(String id, Employee objEmployee)
         {
             string res = string.Empty;
@@ -116,10 +109,8 @@ namespace EmpWebSites.Controllers
                 if (msg == "true")
                 {
                     bool flag = objEmployeeDataHandler.UpdateDetails(objEmployee);
-
                     if (flag)
                     {
-
                         DataSet ds = objEmployeeDataHandler.GetEmployee();
                         foreach (DataRow dr in ds.Tables[0].Rows)
                         {
@@ -151,11 +142,8 @@ namespace EmpWebSites.Controllers
             {
                 res = "Error";
             }
-
             return Json(Employeelist, JsonRequestBehavior.AllowGet);
         }
-
-       
         public JsonResult Delete(String id)
         {
             string msg = "";
@@ -163,7 +151,6 @@ namespace EmpWebSites.Controllers
             if (objEmployeeDataHandler.DeleteEmployee(id))
             {
                 msg = "Employee Deleted Successfully";
-               
             }
             else
             {
@@ -171,15 +158,12 @@ namespace EmpWebSites.Controllers
             }
             //return RedirectToAction("Index");
             return Json(msg, JsonRequestBehavior.AllowGet);
-
         }
-
         public string CheckUserName(String user, string id)
         {
             String flag = string.Empty;
             EmployeeDataHandler objEmployeeDataHandler = new EmployeeDataHandler();
             List<Employee> Employeelist = new List<Employee>();
-
             if (id == null)
             {
                 DataSet ds = objEmployeeDataHandler.GetEmployee();
@@ -196,7 +180,6 @@ namespace EmpWebSites.Controllers
             else
             {
                 DataSet ds = objEmployeeDataHandler.GetEmployeeByIDUpdate(id);
-
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     String UserName = Convert.ToString(dr["UserName"]);
