@@ -14,7 +14,7 @@ namespace EmpWebSites.Controllers
         {
             return View();
         }
-
+        //hello atul
         public JsonResult Get_data()
         {
             EmployeeDataHandler objEmployeeDataHandler = new EmployeeDataHandler();
