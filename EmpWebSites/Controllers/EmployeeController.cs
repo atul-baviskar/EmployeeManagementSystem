@@ -14,8 +14,6 @@ namespace EmpWebSites.Controllers
         {
             return View();
         }
-        //hello atul
-        //master dta again
         public JsonResult Get_data()
         {
             EmployeeDataHandler objEmployeeDataHandler = new EmployeeDataHandler();
@@ -38,7 +36,6 @@ namespace EmpWebSites.Controllers
             return Json(Employeelist, JsonRequestBehavior.AllowGet);
 
         }
-
         public JsonResult Add_record(Employee objEmployee)
         {
             string res = string.Empty;
@@ -80,7 +77,6 @@ namespace EmpWebSites.Controllers
 
             return Json(Employeelist, JsonRequestBehavior.AllowGet);
         }
-
         public JsonResult Get_databyid(String id)
         {
             EmployeeDataHandler objEmployeeDataHandler = new EmployeeDataHandler();
@@ -101,10 +97,7 @@ namespace EmpWebSites.Controllers
                     });
             }
             return Json(Employeelist, JsonRequestBehavior.AllowGet);
-
         }
-
-//Hiii atul
         public JsonResult update(String id, Employee objEmployee)
         {
             string res = string.Empty;
@@ -156,7 +149,7 @@ namespace EmpWebSites.Controllers
             return Json(Employeelist, JsonRequestBehavior.AllowGet);
         }
 
-       
+
         public JsonResult Delete(String id)
         {
             string msg = "";
@@ -164,7 +157,7 @@ namespace EmpWebSites.Controllers
             if (objEmployeeDataHandler.DeleteEmployee(id))
             {
                 msg = "Employee Deleted Successfully";
-               
+
             }
             else
             {
