@@ -170,6 +170,7 @@ namespace EmpWebSites.Controllers
             }
             //return RedirectToAction("Index");
             return Json(msg, JsonRequestBehavior.AllowGet);
+
         }
 
         public string CheckUserName(String user, string id)
@@ -206,6 +207,11 @@ namespace EmpWebSites.Controllers
                 }
             }
             return flag = "true";
+        }
+
+        public string StringUppercase()
+        {
+            return null; 
         }
     }
 }
